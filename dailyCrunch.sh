@@ -19,6 +19,50 @@ svnupdate)
 
   done < "$2"
   ;;
+blast)
+  echo "Play all mp3 tracks in directory " $2
+  if [ -z "$2" ]; then
+    echo "No directory specified"
+  else
+    vlc $2/*.mp3 /dev/null &
+  fi
+  ;;
+ytaudio)
+  if [ -z "$2" ]; then
+    echo "YouTube video URL must be provided"
+  else
+    echo "Downloading audio for url:" $2
+    if [ -z "$3" ]; then
+      output_directory='/home/blackwolf'
+    else
+      output_directory=$3
+    fi
+    echo "Saving audio to directory: " $output_directory
+    youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 -o "$output_directory/%(title)s.%(ext)s" $2  
+  fi
+  ;;
+countfiles)
+  if [ -z "$2" ]; then
+    directory=$PWD
+  else
+    directory=$2
+  fi
+  
+  if [ -z "$3" ]; then
+    echo "Total files in:" $directory
+    find $directory -type f | wc -l
+  else
+    echo "Total" $3 "files in:" $directory
+    find $directory -name "*.$3" | wc -l
+  fi
+  ;;
+countfilesbulk)
+  echo "Counting files in list of directories in file:" $2
+  while IFS='' read -r line || [[ -n "$line" ]]; do
+    echo "Total files in $line:" 
+    find $line -type f | wc -l 
+  done < "$2"
+  ;;
 hardstart)
   echo "Restarting Apache & MySQL"
   service apache2 restart && service mysql restart
