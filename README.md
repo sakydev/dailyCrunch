@@ -9,20 +9,37 @@ There are a lot of tasks that I encounter multiple times a day so every time I h
 Even though I created it for myself, I'm pretty sure there are parts of it that can be useful for other developers too. I'll keep adding more commands in future.
 
 # Usage
-## svnupdate
+#### svnupdate
 Update SVN across unlimited servers
 
+Notice: Requires sshpass on executing server and svn on remote servers
 ```
 dailyCrunch svnupdate serverCreds.txt
 ```
-**serverCreds.txt Format:**
-Unlimited servers, one server per line.
+serverCreds.txt Format: Unlimited servers, one server per line.
 
-* *server_user|server_ip|server_password|directory_to_update_on_remote_server* *
+*server_user|server_ip|server_password|directory_to_update_on_remote_server* 
 
 #### golunch
+Closes Sublime, Chrome, Skype and locks screen
+
+```
+dailyCrunch golunch
+```
 #### blast
+Play all MP3 tracks in given directory
+
+Notice: Requires VLC, Desktop only
+``` 
+dailyCrunch blast path_to_directory
+```
 #### ytaudio
+Download MP3 audio for a YouTube video
+
+Notice: Requires YouTube-dl, FFMPEG
+```
+dailyCrunch ytaudio youtube_video_url path_to_output_directory
+```
 #### webcapture
 #### countfiles
 #### countfilesbulk
