@@ -8,6 +8,12 @@ There are a lot of tasks that I encounter multiple times a day so every time I h
 
 Even though I created it for myself, I'm pretty sure there are parts of it that can be useful for other developers too. I'll keep adding more commands in future.
 
+# Installation
+- Downlolad and extract master zip
+- chmod +x path_to_dailyCrunch.sh
+- ``cp path_to_dailyCrunch.sh /usr/bin/dailyCrunch`` or ``ln path_to_dailyCrunch.sh /usr/bin/dailyCrunch``
+- Go have fun
+
 # Usage
 #### svnupdate
 Update SVN across unlimited servers
