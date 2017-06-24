@@ -15,10 +15,10 @@ Update SVN across unlimited servers
 ```
 dailyCrunch svnupdate serverCreds.txt
 ```
-**serverCreds.txt Format**
+**serverCreds.txt Format:**
 Unlimited servers, one server per line.
 
-server_user|server_ip|server_password|directory_to_update_on_remote_server
+* *server_user|server_ip|server_password|directory_to_update_on_remote_server* *
 
 #### golunch
 #### blast
