@@ -119,7 +119,7 @@ proc)
     ps aux | grep $2
   fi
   ;;
-dirsize)
+big_dogs)
   echo "Biggest $3 files in $2 directory"
   du -a $2 | sort -n -r | head -n $3
   ;;
